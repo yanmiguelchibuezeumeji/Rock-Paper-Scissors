@@ -1,21 +1,15 @@
 function getComputerChoice() {
   let randomNumber = Math.random();
-  let computerMove = '';
+  let computerChoice = '';
   if (randomNumber>=0 && randomNumber<1/3) {
-    computerMove = 'rock';
+    computerChoice = 'rock';
   }
   else if (randomNumber>=1/3 && randomNumber<2/3) {
-    computerMove = 'paper';
+    computerChoice = 'paper';
   }
   else if (randomNumber>=2/3 && randomNumber<1) {
-    computerMove = 'scissors';
+    computerChoice = 'scissors';
   }
-  return computerMove;
-  console.log(computerMove);
-}
-
-function getHumanChoice() {
-  let humanChoice = prompt("Input your choice(rock , paper or scissors):")
-  return humanChoice;
-  console.log(humanChoice); 
+  return computerChoice;
+  console.log(computerChoice);
 }
