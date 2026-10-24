@@ -13,3 +13,9 @@ function getComputerChoice() {
   return computerMove;
   console.log(computerMove);
 }
+
+function getHumanChoice() {
+  let humanChoice = prompt("Input your choice(rock , paper or scissors):")
+  return humanChoice;
+  console.log(humanChoice); 
+}
