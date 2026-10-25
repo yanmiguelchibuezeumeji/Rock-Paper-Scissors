@@ -1,32 +1,29 @@
 function getComputerChoice() {
   let randomNumber = Math.random();
-  let computerChoice = '';
+
   if (randomNumber >= 0 && randomNumber < 1 / 3) {
-    computerChoice = 'rock';
+    return 'rock';
   }
   else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
-    computerChoice = 'paper';
+    return 'paper';
   }
   else if (randomNumber >= 2 / 3 && randomNumber < 1) {
-    computerChoice = 'scissors';
+    return 'scissors';
   }
-  return computerChoice;
-  console.log(computerChoice);
 }
+console.log(getComputerChoice());
+
 
 function getHumanChoice() {
-  let humanChoice = prompt("Input your choice(rock , paper or scissors):")
-  return humanChoice;
-  console.log(humanChoice);
+  return prompt("Input your choice(rock , paper or scissors):");
 }
+console.log(getHumanChoice());
 
 let humanScore = 0;
 let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
   let result = "";
-  humanChoice = getHumanChoice();
-  computerChoice = getComputerChoice();
 
   if (humanChoice === "rock") {
     if (computerChoice === "scissors") {
@@ -38,7 +35,7 @@ function playRound(humanChoice, computerChoice) {
       computerScore += 1;
     }
     else if (computerChoice === "rock") {
-      result = "It's a draw";
+      result = "You draw! rock equals rock";
     }
   }
   else if (humanChoice === "paper") {
@@ -51,7 +48,7 @@ function playRound(humanChoice, computerChoice) {
       computerScore += 1;
     }
     else if (computerChoice === "paper") {
-      result = "It's a draw";
+      result = "You draw! paper equals paper";
     }
   }
   else if (humanChoice === "scissors") {
@@ -64,9 +61,14 @@ function playRound(humanChoice, computerChoice) {
       humanScore += 1;
     }
     else if (computerChoice === "scissors") {
-      result = "It's a draw";
+      result = "You draw! scissors equals scissors";
     }
   }
-console.log(result);
-console.log("humanScore:" + humanScore , "computerScore:" + computerScore);
+  console.log(result);
+  console.log("humanScore:" + humanScore, "computerScore:" + computerScore);
 }
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
