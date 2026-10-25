@@ -11,13 +11,11 @@ function getComputerChoice() {
     return 'scissors';
   }
 }
-console.log(getComputerChoice());
-
 
 function getHumanChoice() {
-  return prompt("Input your choice(rock , paper or scissors):");
+  let choice = prompt("Input your choice(rock , paper or scissors):");
+  return choice;
 }
-console.log(getHumanChoice());
 
 let humanScore = 0;
 let computerScore = 0;
@@ -68,7 +66,16 @@ function playRound(humanChoice, computerChoice) {
   console.log("humanScore:" + humanScore, "computerScore:" + computerScore);
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+function playGame() {
+  for (let i = 0; i < 5; i++) {
+    const humanSelection = getHumanChoice();
+    console.log("getHumanChoice returned:", humanSelection);
 
-playRound(humanSelection, computerSelection);
+    const computerSelection = getComputerChoice();
+    console.log("getComputerChoice returned:", computerSelection);
+
+    playRound(humanSelection, computerSelection);
+  }
+}
+
+playGame();
